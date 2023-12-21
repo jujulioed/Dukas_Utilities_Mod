@@ -1,6 +1,7 @@
 package net.jujulioed.dukasutilitiesmod.block;
 
 import net.jujulioed.dukasutilitiesmod.DukasUtilitiesMod;
+import net.jujulioed.dukasutilitiesmod.block.custom.UncraftMachineBlock;
 import net.jujulioed.dukasutilitiesmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -23,6 +24,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> UNCRAFT_MACHINE_BODY = registerBlock("uncraft_machine_body",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.CHAIN)));
+
+    public static final RegistryObject<Block> UNCRAFT_MACHINE = registerBlock("uncraft_machine",
+            () -> new UncraftMachineBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "dukasutilitiesmod:uncraft_machine_feet"
+    },
+    "B": {
+      "item": "dukasutilitiesmod:uncraft_machine_body"
+    },
+    "S": {
+      "item": "minecraft:glass_pane"
+    }
+  },
+  "pattern": [
+    "SSS",
+    " B ",
+    "A A"
+  ],
+  "result": {
+    "item": "dukasutilitiesmod:uncraft_machine"
+  },
+  "show_notification": true
+}

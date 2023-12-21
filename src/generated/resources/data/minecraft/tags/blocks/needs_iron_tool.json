@@ -1,6 +1,8 @@
 {
   "values": [
     "dukasutilitiesmod:uncraft_machine_body",
+    "#forge:storage_blocks/iron",
+    "dukasutilitiesmod:uncraft_machine",
     "#forge:storage_blocks/iron"
   ]
 }

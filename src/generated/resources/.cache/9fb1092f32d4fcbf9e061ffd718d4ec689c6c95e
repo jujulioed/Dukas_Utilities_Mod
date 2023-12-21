@@ -1,5 +1,7 @@
-// 1.20.1	2023-12-21T01:16:39.7954646	Recipes
+// 1.20.1	2023-12-21T01:52:31.6612679	Recipes
+6a31755f43f01cf30bd5e31331e8c26e3f8d26ca data/dukasutilitiesmod/advancements/recipes/misc/uncraft_machine.json
 bd6a44d799dd5a15e985a06977656c152b3cbdec data/dukasutilitiesmod/advancements/recipes/misc/uncraft_machine_body.json
 867028cec63fa2ee4b07a57906be15ca7c2a7c01 data/dukasutilitiesmod/advancements/recipes/misc/uncraft_machine_feet.json
+7d69997699eac6f9bba7795f39a9444715480777 data/dukasutilitiesmod/recipes/uncraft_machine.json
 44fcc9d4dfce63a948371d4fb9cdc3ffe890424d data/dukasutilitiesmod/recipes/uncraft_machine_body.json
 6e20e7f64c80ea1062f2229ff5f144cd0f03e738 data/dukasutilitiesmod/recipes/uncraft_machine_feet.json

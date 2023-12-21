@@ -20,9 +20,11 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.UNCRAFT_MACHINE_BODY.get());
+                .add(ModBlocks.UNCRAFT_MACHINE_BODY.get(),
+                        ModBlocks.UNCRAFT_MACHINE.get());
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.UNCRAFT_MACHINE_BODY.get()).addTag(Tags.Blocks.STORAGE_BLOCKS_IRON);
+                .add(ModBlocks.UNCRAFT_MACHINE_BODY.get()).addTag(Tags.Blocks.STORAGE_BLOCKS_IRON)
+                .add(ModBlocks.UNCRAFT_MACHINE.getKey()).addTag(Tags.Blocks.STORAGE_BLOCKS_IRON);
     }
 }

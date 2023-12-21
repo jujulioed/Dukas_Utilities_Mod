@@ -1,3 +1,3 @@
-// 1.20.1	2023-12-21T01:16:39.7934649	Tags for minecraft:block mod id dukasutilitiesmod
-8f547af1b26bff149a542bb50832b6709ef96a90 data/minecraft/tags/blocks/mineable/pickaxe.json
-bbabdf301a1b7588cff0f952b49db01a4d65adb0 data/minecraft/tags/blocks/needs_iron_tool.json
+// 1.20.1	2023-12-21T01:52:31.659267	Tags for minecraft:block mod id dukasutilitiesmod
+a7d3ffa8b782437f766060f8c55d9a4904c34e09 data/minecraft/tags/blocks/mineable/pickaxe.json
+762b7245095fb6e363b8879e83d83ab145e1201f data/minecraft/tags/blocks/needs_iron_tool.json

@@ -22,6 +22,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.UNCRAFT_MACHINE_FEET.get());
 
                         pOutput.accept(ModBlocks.UNCRAFT_MACHINE_BODY.get());
+                        pOutput.accept(ModBlocks.UNCRAFT_MACHINE.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {

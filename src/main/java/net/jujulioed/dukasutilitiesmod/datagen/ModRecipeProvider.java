@@ -40,6 +40,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', Items.IRON_BLOCK)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.UNCRAFT_MACHINE.get())
+                .pattern("SSS")
+                .pattern(" B ")
+                .pattern("A A")
+                .define('S', Items.GLASS_PANE)
+                .define('B', ModBlocks.UNCRAFT_MACHINE_BODY.get())
+                .define('A', ModItems.UNCRAFT_MACHINE_FEET.get())
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {

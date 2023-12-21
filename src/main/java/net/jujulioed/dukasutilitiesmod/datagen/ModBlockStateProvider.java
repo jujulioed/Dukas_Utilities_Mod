@@ -19,6 +19,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(ModBlocks.UNCRAFT_MACHINE_BODY);
 
+        simpleBlockWithItem(ModBlocks.UNCRAFT_MACHINE.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/uncraft_machine")));
+
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

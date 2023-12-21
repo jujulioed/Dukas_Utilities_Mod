@@ -24,6 +24,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         this.dropSelf(ModBlocks.UNCRAFT_MACHINE_BODY.get());
+        this.dropSelf(ModBlocks.UNCRAFT_MACHINE.get());
 
     }
 

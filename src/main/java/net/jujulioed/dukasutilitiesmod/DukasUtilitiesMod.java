@@ -2,8 +2,14 @@ package net.jujulioed.dukasutilitiesmod;
 
 import com.mojang.logging.LogUtils;
 import net.jujulioed.dukasutilitiesmod.block.ModBlocks;
+import net.jujulioed.dukasutilitiesmod.block.entity.ModBlockEntities;
 import net.jujulioed.dukasutilitiesmod.item.ModCreativeModTabs;
 import net.jujulioed.dukasutilitiesmod.item.ModItems;
+import net.jujulioed.dukasutilitiesmod.screen.ModMenuTypes;
+import net.jujulioed.dukasutilitiesmod.screen.UncraftMachineScreen;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -36,6 +42,8 @@ public class DukasUtilitiesMod {
         ModItems.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
     }
 
@@ -46,7 +54,10 @@ public class DukasUtilitiesMod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(Items.IRON_INGOT);
+            event.accept(Items.IRON_BLOCK);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -63,7 +74,7 @@ public class DukasUtilitiesMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            MenuScreens.register(ModMenuTypes.UNCRAFT_MACHINE_MENU.get(), UncraftMachineScreen::new);
         }
     }
 }
