@@ -20,6 +20,9 @@ public class ModCreativeModTabs {
                     .displayItems((pParameters, pOutput) -> {
 
                         pOutput.accept(ModItems.UNCRAFT_MACHINE_FEET.get());
+                        pOutput.accept(ModItems.IRON_REVERSAL_UNIT.get());
+                        pOutput.accept(ModItems.GOLD_REVERSAL_UNIT.get());
+                        pOutput.accept(ModItems.DIAMOND_REVERSAL_UNIT.get());
 
                         pOutput.accept(ModBlocks.UNCRAFT_MACHINE_BODY.get());
                         pOutput.accept(ModBlocks.UNCRAFT_MACHINE.get());

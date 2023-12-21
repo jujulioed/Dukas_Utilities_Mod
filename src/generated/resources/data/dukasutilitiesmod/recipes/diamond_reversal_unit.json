@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "I": {
+      "item": "dukasutilitiesmod:iron_reversal_unit"
+    }
+  },
+  "pattern": [
+    "   ",
+    "   ",
+    "ID "
+  ],
+  "result": {
+    "item": "dukasutilitiesmod:diamond_reversal_unit"
+  },
+  "show_notification": true
+}

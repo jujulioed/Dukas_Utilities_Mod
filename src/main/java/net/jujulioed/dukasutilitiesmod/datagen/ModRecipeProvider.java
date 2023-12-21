@@ -43,11 +43,39 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.UNCRAFT_MACHINE.get())
                 .pattern("SSS")
-                .pattern(" B ")
+                .pattern("IBI")
                 .pattern("A A")
                 .define('S', Items.GLASS_PANE)
                 .define('B', ModBlocks.UNCRAFT_MACHINE_BODY.get())
                 .define('A', ModItems.UNCRAFT_MACHINE_FEET.get())
+                .define('I', Items.IRON_INGOT)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_REVERSAL_UNIT.get())
+                .pattern("SSS")
+                .pattern("SIS")
+                .pattern("SSS")
+                .define('S', Items.COBBLESTONE)
+                .define('I', Items.IRON_INGOT)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLD_REVERSAL_UNIT.get())
+                .pattern("   ")
+                .pattern("   ")
+                .pattern("IG ")
+                .define('G', Items.GOLD_INGOT)
+                .define('I', ModItems.IRON_REVERSAL_UNIT.get())
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DIAMOND_REVERSAL_UNIT.get())
+                .pattern("   ")
+                .pattern("   ")
+                .pattern("ID ")
+                .define('D', Items.DIAMOND)
+                .define('I', ModItems.IRON_REVERSAL_UNIT.get())
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
     }

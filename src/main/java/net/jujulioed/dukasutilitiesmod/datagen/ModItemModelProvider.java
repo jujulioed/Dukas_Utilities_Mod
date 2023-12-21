@@ -22,6 +22,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.UNCRAFT_MACHINE_FEET);
         simpleItem(ModItems.CREATIVE_ITEM_FACADE);
 
+        simpleItem(ModItems.IRON_REVERSAL_UNIT);
+        simpleItem(ModItems.GOLD_REVERSAL_UNIT);
+        simpleItem(ModItems.DIAMOND_REVERSAL_UNIT);
 
     }
 

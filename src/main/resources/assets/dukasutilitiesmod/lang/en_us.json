@@ -3,6 +3,10 @@
 
   "item.dukasutilitiesmod.uncraft_machine_feet": "Uncraft Machine Feet",
 
+  "item.dukasutilitiesmod.iron_reversal_unit": "Iron Reversal Unit",
+  "item.dukasutilitiesmod.gold_reversal_unit": "Gold Reversal Unit",
+  "item.dukasutilitiesmod.diamond_reversal_unit": "Diamond Reversal Unit",
+
   "block.dukasutilitiesmod.uncraft_machine_body": "Uncraft Machine Body",
   "block.dukasutilitiesmod.uncraft_machine": "Uncraft Machine"
 }

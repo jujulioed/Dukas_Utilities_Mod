@@ -17,6 +17,12 @@ public class ModItems {
 
     public static final RegistryObject<Item> UNCRAFT_MACHINE_FEET  = ITEMS.register("uncraft_machine_feet",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> IRON_REVERSAL_UNIT  = ITEMS.register("iron_reversal_unit",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GOLD_REVERSAL_UNIT  = ITEMS.register("gold_reversal_unit",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_REVERSAL_UNIT  = ITEMS.register("diamond_reversal_unit",
+            () -> new Item(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

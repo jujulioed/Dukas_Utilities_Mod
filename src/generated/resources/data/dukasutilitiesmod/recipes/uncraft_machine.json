@@ -8,13 +8,16 @@
     "B": {
       "item": "dukasutilitiesmod:uncraft_machine_body"
     },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
     "S": {
       "item": "minecraft:glass_pane"
     }
   },
   "pattern": [
     "SSS",
-    " B ",
+    "IBI",
     "A A"
   ],
   "result": {
