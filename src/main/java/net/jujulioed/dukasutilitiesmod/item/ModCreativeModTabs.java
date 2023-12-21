@@ -1,6 +1,7 @@
 package net.jujulioed.dukasutilitiesmod.item;
 
 import net.jujulioed.dukasutilitiesmod.DukasUtilitiesMod;
+import net.jujulioed.dukasutilitiesmod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -19,6 +20,8 @@ public class ModCreativeModTabs {
                     .displayItems((pParameters, pOutput) -> {
 
                         pOutput.accept(ModItems.UNCRAFT_MACHINE_FEET.get());
+
+                        pOutput.accept(ModBlocks.UNCRAFT_MACHINE_BODY.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {

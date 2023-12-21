@@ -23,6 +23,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        this.dropSelf(ModBlocks.UNCRAFT_MACHINE_BODY.get());
+
     }
 
     protected LootTable.Builder createCooperLikeOreDrops(Block pBlock, Item item) {

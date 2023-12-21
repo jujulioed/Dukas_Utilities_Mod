@@ -1,6 +1,7 @@
 package net.jujulioed.dukasutilitiesmod;
 
 import com.mojang.logging.LogUtils;
+import net.jujulioed.dukasutilitiesmod.block.ModBlocks;
 import net.jujulioed.dukasutilitiesmod.item.ModCreativeModTabs;
 import net.jujulioed.dukasutilitiesmod.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
@@ -34,6 +35,7 @@ public class DukasUtilitiesMod {
 
         ModItems.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
     }
 

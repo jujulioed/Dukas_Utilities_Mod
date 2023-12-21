@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "dukasutilitiesmod:block/uncraft_machine_body"
+  }
+}

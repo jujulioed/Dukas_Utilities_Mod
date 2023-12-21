@@ -22,6 +22,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.UNCRAFT_MACHINE_FEET);
         simpleItem(ModItems.CREATIVE_ITEM_FACADE);
 
+
+
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

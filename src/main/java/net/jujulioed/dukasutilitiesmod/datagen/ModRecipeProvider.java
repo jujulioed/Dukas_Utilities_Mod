@@ -1,6 +1,7 @@
 package net.jujulioed.dukasutilitiesmod.datagen;
 
 import net.jujulioed.dukasutilitiesmod.DukasUtilitiesMod;
+import net.jujulioed.dukasutilitiesmod.block.ModBlocks;
 import net.jujulioed.dukasutilitiesmod.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -28,6 +29,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("   ")
                 .pattern("S S")
                 .define('S', Items.IRON_INGOT)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.UNCRAFT_MACHINE_BODY.get())
+                .pattern(" S ")
+                .pattern("SBS")
+                .pattern(" S ")
+                .define('S', Items.REDSTONE)
+                .define('B', Items.IRON_BLOCK)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
     }
