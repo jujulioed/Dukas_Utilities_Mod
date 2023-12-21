@@ -44,20 +44,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.UNCRAFT_MACHINE.get())
                 .pattern("SSS")
                 .pattern("IBI")
-                .pattern("A A")
+                .pattern("ARA")
                 .define('S', Items.GLASS_PANE)
                 .define('B', ModBlocks.UNCRAFT_MACHINE_BODY.get())
                 .define('A', ModItems.UNCRAFT_MACHINE_FEET.get())
                 .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_REVERSAL_UNIT.get())
-                .pattern("SSS")
-                .pattern("SIS")
-                .pattern("SSS")
-                .define('S', Items.COBBLESTONE)
+                .pattern("SRS")
+                .pattern("RIR")
+                .pattern("SRS")
+                .define('S', Items.DEEPSLATE)
                 .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
 

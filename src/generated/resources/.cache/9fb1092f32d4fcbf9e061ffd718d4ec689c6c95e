@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-21T13:29:55.8429062	Recipes
+// 1.20.1	2023-12-21T14:41:43.9128562	Recipes
 9c86837a1e03ec554399c1dbaa5f77166b9855c3 data/dukasutilitiesmod/advancements/recipes/misc/diamond_reversal_unit.json
 ccc6740346866332f621dc6d20a9ce2fddded00c data/dukasutilitiesmod/advancements/recipes/misc/gold_reversal_unit.json
 b85eacfacbcdd02a01f833745143d1d15ab2c9bf data/dukasutilitiesmod/advancements/recipes/misc/iron_reversal_unit.json
@@ -7,7 +7,7 @@ bd6a44d799dd5a15e985a06977656c152b3cbdec data/dukasutilitiesmod/advancements/rec
 867028cec63fa2ee4b07a57906be15ca7c2a7c01 data/dukasutilitiesmod/advancements/recipes/misc/uncraft_machine_feet.json
 b3b88ccf6def366792a3665602d6f071b648a4fb data/dukasutilitiesmod/recipes/diamond_reversal_unit.json
 3adaa43e39b1b0a4f6db6eb82860105b5b5d9dbf data/dukasutilitiesmod/recipes/gold_reversal_unit.json
-3f6d9ed1cefdda7d998ef27dba8259ab213e6828 data/dukasutilitiesmod/recipes/iron_reversal_unit.json
-4bcf31682450c5419971f9da6c14cdeda6ae6531 data/dukasutilitiesmod/recipes/uncraft_machine.json
+7e07cc8fbb6e944c33a4b80f6f3529dc5a8cc118 data/dukasutilitiesmod/recipes/iron_reversal_unit.json
+ead3704c7b579cbcbf923e4f38ba8691ab7d0718 data/dukasutilitiesmod/recipes/uncraft_machine.json
 44fcc9d4dfce63a948371d4fb9cdc3ffe890424d data/dukasutilitiesmod/recipes/uncraft_machine_body.json
 6e20e7f64c80ea1062f2229ff5f144cd0f03e738 data/dukasutilitiesmod/recipes/uncraft_machine_feet.json

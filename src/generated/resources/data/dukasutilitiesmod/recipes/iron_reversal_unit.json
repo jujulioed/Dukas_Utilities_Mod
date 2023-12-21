@@ -5,14 +5,17 @@
     "I": {
       "item": "minecraft:iron_ingot"
     },
+    "R": {
+      "item": "minecraft:redstone"
+    },
     "S": {
-      "item": "minecraft:cobblestone"
+      "item": "minecraft:deepslate"
     }
   },
   "pattern": [
-    "SSS",
-    "SIS",
-    "SSS"
+    "SRS",
+    "RIR",
+    "SRS"
   ],
   "result": {
     "item": "dukasutilitiesmod:iron_reversal_unit"

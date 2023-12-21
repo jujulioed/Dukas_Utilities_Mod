@@ -11,6 +11,9 @@
     "I": {
       "item": "minecraft:iron_ingot"
     },
+    "R": {
+      "item": "minecraft:redstone"
+    },
     "S": {
       "item": "minecraft:glass_pane"
     }
@@ -18,7 +21,7 @@
   "pattern": [
     "SSS",
     "IBI",
-    "A A"
+    "ARA"
   ],
   "result": {
     "item": "dukasutilitiesmod:uncraft_machine"
