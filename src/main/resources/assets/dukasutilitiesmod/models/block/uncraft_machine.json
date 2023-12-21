@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"render_type": "minecraft:cutout_mipped",
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "dukasutilitiesmod:block/uncraft_machine_parts/uncraft_machine_texture",

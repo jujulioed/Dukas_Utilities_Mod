@@ -23,7 +23,7 @@ import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
 public class UncraftMachineBlock extends BaseEntityBlock {
-    public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 12, 16);
+    public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 15, 16);
     public UncraftMachineBlock(Properties pProperties) {
         super(pProperties);
     }
