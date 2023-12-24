@@ -1,5 +1,6 @@
 package net.jujulioed.dukasutilitiesmod.block.entity;
 
+import net.jujulioed.dukasutilitiesmod.item.ModItems;
 import net.jujulioed.dukasutilitiesmod.screen.UncraftMachineMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -27,10 +28,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class UncraftMachineBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(2);
+    private final ItemStackHandler itemHandler = new ItemStackHandler(4);
 
-    private static final int INPUT_SLOT = 0;
-    private static final int OUTPUT_SLOT = 1;
+    private static final int TOOL_INPUT_SLOT = 0;
+    private static final int UNIT_INPUT_SLOT = 1;
+    private static final int ITEM_SLOT_OUTPUT_0 = 2;
+    private static final int ITEM_SLOT_OUTPUT_1 = 3;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
@@ -40,6 +43,7 @@ public class UncraftMachineBlockEntity extends BlockEntity implements MenuProvid
 
     public UncraftMachineBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.UNCRAFT_MACHINE_BE.get(), pPos, pBlockState);
+        //this.itemHandler.setSize(4);
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {
@@ -87,7 +91,7 @@ public class UncraftMachineBlockEntity extends BlockEntity implements MenuProvid
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("block.tutorialmod.gem_polishing_station");
+        return Component.translatable("block.tutorialmod.uncraft_machine_menu");
     }
 
     public void drops() {
@@ -108,7 +112,7 @@ public class UncraftMachineBlockEntity extends BlockEntity implements MenuProvid
     @Override
     protected void saveAdditional(CompoundTag pTag) {
         pTag.put("inventory", itemHandler.serializeNBT());
-        pTag.putInt("gem_polishing_station.progress", progress);
+        pTag.putInt("uncraft_machine_menu.progress", progress);
 
         super.saveAdditional(pTag);
     }
@@ -117,7 +121,7 @@ public class UncraftMachineBlockEntity extends BlockEntity implements MenuProvid
     public void load(CompoundTag pTag) {
         super.load(pTag);
         itemHandler.deserializeNBT(pTag.getCompound("inventory"));
-        progress = pTag.getInt("gem_polishing_station.progress");
+        progress = pTag.getInt("uncraft_machine.progress");
     }
 
 
@@ -141,27 +145,34 @@ public class UncraftMachineBlockEntity extends BlockEntity implements MenuProvid
     }
 
     private void craftItem() {
-        ItemStack result = new ItemStack(Items.IRON_BLOCK, 1);
-        this.itemHandler.extractItem(INPUT_SLOT, 1, false);
+        ItemStack result_slot_0 = new ItemStack(Items.IRON_INGOT, 3);
+        ItemStack result_slot_1 = new ItemStack(Items.STICK, 2);
+        this.itemHandler.extractItem(TOOL_INPUT_SLOT, 1, false);
+        this.itemHandler.extractItem(UNIT_INPUT_SLOT, 1, false);
 
-        this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
-                this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
+        this.itemHandler.setStackInSlot(ITEM_SLOT_OUTPUT_0, new ItemStack(result_slot_0.getItem(),
+                this.itemHandler.getStackInSlot(ITEM_SLOT_OUTPUT_0).getCount() + result_slot_0.getCount()));
+        this.itemHandler.setStackInSlot(ITEM_SLOT_OUTPUT_1, new ItemStack(result_slot_1.getItem(),
+                this.itemHandler.getStackInSlot(ITEM_SLOT_OUTPUT_1).getCount() + result_slot_1.getCount()));
 
     }
 
     private boolean hasRecipe() {
-        boolean hasCraftingItem = this.itemHandler.getStackInSlot(INPUT_SLOT).getItem() == Items.IRON_BLOCK;
-        ItemStack result = new ItemStack(Items.IRON_INGOT);
+        boolean hasCraftingItem = this.itemHandler.getStackInSlot(TOOL_INPUT_SLOT).getItem() == Items.IRON_PICKAXE;
+        boolean hasUnitItem = this.itemHandler.getStackInSlot(UNIT_INPUT_SLOT).getItem() == ModItems.IRON_REVERSAL_UNIT.get();
+        ItemStack result_slot_0 = new ItemStack(Items.IRON_INGOT);
+        ItemStack result_slot_1 = new ItemStack(Items.STICK);
 
-        return hasCraftingItem && canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+        return hasCraftingItem && canInsertAmountIntoOutputSlot(result_slot_0.getCount(), ITEM_SLOT_OUTPUT_0) && canInsertItemIntoOutputSlot(result_slot_0.getItem(), ITEM_SLOT_OUTPUT_0)
+                && hasUnitItem && canInsertAmountIntoOutputSlot(result_slot_1.getCount(), ITEM_SLOT_OUTPUT_1) && canInsertItemIntoOutputSlot(result_slot_1.getItem(), ITEM_SLOT_OUTPUT_1);
     }
 
-    private boolean canInsertItemIntoOutputSlot(Item item) {
-        return this.itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() || this.itemHandler.getStackInSlot(OUTPUT_SLOT).is(item);
+    private boolean canInsertItemIntoOutputSlot(Item item, int slot) {
+        return this.itemHandler.getStackInSlot(slot).isEmpty() || this.itemHandler.getStackInSlot(slot).is(item);
     }
 
-    private boolean canInsertAmountIntoOutputSlot(int count) {
-        return this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + count <= this.itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
+    private boolean canInsertAmountIntoOutputSlot(int count, int slot) {
+        return this.itemHandler.getStackInSlot(slot).getCount() + count <= this.itemHandler.getStackInSlot(slot).getMaxStackSize();
     }
 
     private boolean hasProgressFinished() {
