@@ -22,7 +22,7 @@ protected void init() {
         super.init();
         this.inventoryLabelY = 10000;
         this.titleLabelY = 10000;
-        }
+}
 
 @Override
 protected void renderBg(GuiGraphics guiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
@@ -33,13 +33,13 @@ protected void renderBg(GuiGraphics guiGraphics, float pPartialTick, int pMouseX
         int y = (height - imageHeight) / 2;
 
         guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
-
+        
         renderProgressArrow(guiGraphics, x, y);
         }
 
 private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if(menu.isCrafting()) {
-        guiGraphics.blit(TEXTURE, x + 85, y + 30, 176, 0, 8, menu.getScaledProgress());
+        guiGraphics.blit(TEXTURE, x + 74, y + 38, 176, 0, menu.getScaledProgress(), 14);
         }
         }
 
