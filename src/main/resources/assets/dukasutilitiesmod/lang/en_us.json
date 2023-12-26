@@ -8,5 +8,7 @@
   "item.dukasutilitiesmod.diamond_reversal_unit": "Diamond Reversal Unit",
 
   "block.dukasutilitiesmod.uncraft_machine_body": "Uncraft Machine Body",
-  "block.dukasutilitiesmod.uncraft_machine": "Uncraft Machine"
+  "block.dukasutilitiesmod.uncraft_machine": "Uncraft Machine",
+
+  "gui.dukasutilitiesmod.uncraft_machine.uncraft_button": "Uncraft"
 }
