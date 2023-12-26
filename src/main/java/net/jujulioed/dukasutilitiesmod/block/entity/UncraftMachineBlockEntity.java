@@ -28,7 +28,15 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class UncraftMachineBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(4);
+    private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
+        @Override
+        protected void onContentsChanged(int slot) {
+            setChanged();
+            if(!level.isClientSide()) {
+                level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+            }
+        }
+    };
 
     private static final int TOOL_INPUT_SLOT = 0;
     private static final int UNIT_INPUT_SLOT = 1;

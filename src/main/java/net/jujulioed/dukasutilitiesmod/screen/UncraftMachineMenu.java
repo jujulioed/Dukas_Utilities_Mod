@@ -1,8 +1,10 @@
 package net.jujulioed.dukasutilitiesmod.screen;
 
+import net.jujulioed.dukasutilitiesmod.DukasUtilitiesMod;
 import net.jujulioed.dukasutilitiesmod.block.ModBlocks;
 import net.jujulioed.dukasutilitiesmod.block.entity.UncraftMachineBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
@@ -122,4 +124,5 @@ public class UncraftMachineMenu extends AbstractContainerMenu {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
     }
+
 }
