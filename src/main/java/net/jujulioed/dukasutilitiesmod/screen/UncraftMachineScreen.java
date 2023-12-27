@@ -3,6 +3,7 @@ package net.jujulioed.dukasutilitiesmod.screen;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.jujulioed.dukasutilitiesmod.DukasUtilitiesMod;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
@@ -14,7 +15,7 @@ public class UncraftMachineScreen extends AbstractContainerScreen<UncraftMachine
                 new ResourceLocation(DukasUtilitiesMod.MOD_ID, "textures/gui/uncraft_machine_gui.png");
         private static final Component BUTTON_TEXT = Component.translatable("gui." + DukasUtilitiesMod.MOD_ID + ".uncraft_machine.uncraft_button");
 
-        private DukasUtilitiesButton button;
+        private Button button;
 
         public UncraftMachineScreen(UncraftMachineMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
                 super(pMenu, pPlayerInventory, pTitle);
@@ -26,8 +27,12 @@ public class UncraftMachineScreen extends AbstractContainerScreen<UncraftMachine
                 this.inventoryLabelY = 10000;
                 this.titleLabelY = 10000;
 
-                this.button = new DukasUtilitiesButton(this.leftPos + 57, this.topPos + 8, 60, 15, BUTTON_TEXT);
-                this.addRenderableWidget(this.button);
+                this.button = addRenderableWidget(
+                        Button.builder(
+                                        BUTTON_TEXT,
+                                        this::buttonState)
+                                .bounds(this.leftPos + 57, this.topPos + 8, 60, 15)
+                                .build());
         }
 
         @Override
@@ -57,4 +62,7 @@ public class UncraftMachineScreen extends AbstractContainerScreen<UncraftMachine
 
                 }
 
+        private void buttonState(Button button) {
+                System.out.println("Botão apertado");
+        }
 }
