@@ -13,9 +13,9 @@ import net.minecraft.world.entity.player.Inventory;
 public class UncraftMachineScreen extends AbstractContainerScreen<UncraftMachineMenu> {
         private static final ResourceLocation TEXTURE =
                 new ResourceLocation(DukasUtilitiesMod.MOD_ID, "textures/gui/uncraft_machine_gui.png");
-        private static final Component BUTTON_TEXT = Component.translatable("gui." + DukasUtilitiesMod.MOD_ID + ".uncraft_machine.uncraft_button");
+        // private static final Component BUTTON_TEXT = Component.translatable("gui." + DukasUtilitiesMod.MOD_ID + ".uncraft_machine.uncraft_button");
 
-        private Button button;
+        // private Button button;
 
         public UncraftMachineScreen(UncraftMachineMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
                 super(pMenu, pPlayerInventory, pTitle);
@@ -27,12 +27,13 @@ public class UncraftMachineScreen extends AbstractContainerScreen<UncraftMachine
                 this.inventoryLabelY = 10000;
                 this.titleLabelY = 10000;
 
-                this.button = addRenderableWidget(
+        /**        this.button = addRenderableWidget(
                         Button.builder(
                                         BUTTON_TEXT,
                                         this::buttonState)
                                 .bounds(this.leftPos + 57, this.topPos + 8, 60, 15)
                                 .build());
+        **/
         }
 
         @Override
@@ -62,7 +63,8 @@ public class UncraftMachineScreen extends AbstractContainerScreen<UncraftMachine
 
                 }
 
-        private void buttonState(Button button) {
+        /** private void buttonState(Button button) {
                 System.out.println("Botão apertado");
         }
+         **/
 }

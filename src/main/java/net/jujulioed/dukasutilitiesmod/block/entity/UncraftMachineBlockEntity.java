@@ -6,6 +6,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -75,6 +78,14 @@ public class UncraftMachineBlockEntity extends BlockEntity implements MenuProvid
                 return 2;
             }
         };
+    }
+
+    public ItemStack getRenderStack() {
+        if(itemHandler.getStackInSlot(ITEM_SLOT_OUTPUT_0).isEmpty()) {
+            return  itemHandler.getStackInSlot(TOOL_INPUT_SLOT);
+        } else {
+            return  itemHandler.getStackInSlot(ITEM_SLOT_OUTPUT_0);
+        }
     }
 
     @Override
@@ -191,4 +202,14 @@ public class UncraftMachineBlockEntity extends BlockEntity implements MenuProvid
         progress++;
     }
 
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag() {
+        return saveWithFullMetadata();
+    }
 }
